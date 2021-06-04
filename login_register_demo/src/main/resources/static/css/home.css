@@ -1,0 +1,51 @@
+body {
+    margin:0;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar a {
+    text-align: left;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    /*text-align: center;*/
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar form{
+    text-align: right;
+}
+.main {
+    padding: 16px;
+    margin-top: 30px;
+    height: 1500px; /* Used in this example to enable scrolling */
+}
+#user td, #user th {
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+#user tr:nth-child(even){background-color: #f2f2f2;}
+
+#user tr:hover {background-color: #ddd;}
+
+#user th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}

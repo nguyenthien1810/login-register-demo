@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/register.css" rel="stylesheet" type="text/css"/>
+    <title>Register Page</title>
+</head>
+<body>
+<main>
+    <div class="container">
+        <div class="register-form">
+<form method="post" th:action="@{/register}" th:object="${user}">
+<!--    <div class="container">-->
+        <h1>Đăng Ký</h1>
+        <hr>
+
+        <label for="userName"><b> Tên Tài Khoản</b></label>
+        <input type="text" placeholder=" Tên Tài Khoản" name="userName" id="userName" th:field="*{userName}" required>
+
+        <label for="psw"><b>Mật Khẩu</b></label>
+        <input type="password" placeholder="Mật Khẩu" name="psw" th:field="*{passWord}" id="psw" required>
+
+        <label for="name"><b>Tên người dùng</b></label>
+        <input type="text" placeholder="Tên Người Dùng" name="name" id="name" th:field="*{name}" required>
+
+        <label for="address"><b> Địa Chỉ</b></label>
+        <input type="text" placeholder=" Địa Chỉ " name="address" id="address" th:field="*{address}" required>
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Email" name="psw" th:field="*{email}" id="email" required>
+
+        <label for="phone"><b>Số điện thoại</b></label>
+        <input type="text" placeholder="Số điện thoại" name="phone" th:field="*{phoneNumber}" id="phone" required>
+
+
+        <button type="submit" class="registerbtn">Đăng Ký</button>
+<!--    </div>-->
+
+    <div class="container signin">
+        <p>Bạn đã có tài khoản ? </p><a th:href="@{/login}">Đăng Nhập</a>
+    </div>
+    <div><a th:href="@{/}">Về trang chủ</a></div>
+</form>
+        </div>
+    </div>
+</main>
+</body>
+</html>

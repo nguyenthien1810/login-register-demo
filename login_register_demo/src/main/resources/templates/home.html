@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/home.css" rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Danh Sách Người Dùng</title>
+</head>
+<body>
+    <div th:class="navbar">
+        <!--    style="border: 1px solid #ccc;padding:5px;margin-bottom:20px;"-->
+        <a th:if="${#request.userPrincipal != null}" th:href="@{/Home}">Home</a>
+    </div>
+    <div th:class="navbar">
+        <!--    style="border: 1px solid #ccc;padding:5px;margin-bottom:20px;"-->
+        <a th:if="${#request.userPrincipal != null}" th:href="@{/logout}">Logout</a>
+    </div>
+    <div th:class="navbar">
+        <form th:action="@{/search}" method="get">
+            <input type="text" name="key_search">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+<div th:class="main">
+<!--    <form th:action="@{/search}" method="get">-->
+<!--        <input type="text" name="key_search">-->
+<!--        <input type="submit" value="Search">-->
+<!--    </form>-->
+
+    <table id="user">
+        <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên Người Dùng</th>
+            <th>Địa Chỉ</th>
+            <th>Email</th>
+            <th>Số điên thoại</th>
+           
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="users, start : ${user}">
+            <td th:text="${start.count}"></td>
+            <td th:text="${users.name}"></td>
+            <td th:text="${users.address}"></td>
+            <td th:text="${users.email}"></td>
+            <td th:text="${users.phoneNumber}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
